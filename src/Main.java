@@ -189,7 +189,9 @@ public class Main {
     private static void exploreCatalog() {
         System.out.println("Products: ");
         for (Product product : app.getProducts()) {
+            System.out.println("Product ID: " + product.getID());
             System.out.println(product);
+            System.out.println("------------------------");
         }
     }
 
@@ -320,10 +322,11 @@ public class Main {
             return;
         }
         System.out.println("Product Details: ");
-        StringBuilder description= new StringBuilder();
+        String description = "";
         String descriptionLine = sc.nextLine();
-        while (descriptionLine.length() != 0) {
-            description.append(descriptionLine).append("\n");
+        while (!(descriptionLine.length() == 0)) {
+            description += descriptionLine + "\n";
+            descriptionLine = sc.nextLine();
         }
         System.out.print("Product Price: ");
         float price = sc.nextFloat();
