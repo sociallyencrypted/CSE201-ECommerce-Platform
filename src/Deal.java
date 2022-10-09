@@ -18,4 +18,8 @@ public class Deal {
     public String getID() {
         return p1.getID() + "_" + p2.getID();
     }
+
+    public String toString() {
+        return p1.getName() + " + " + p2.getName() + " for " + combinedPriceNormal + " (Normal), " + combinedPricePrime + " (Prime), " + combinedPriceElite + " (Elite)";
+    }
 }

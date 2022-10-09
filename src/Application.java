@@ -142,4 +142,12 @@ public class Application {
             }
         }
     }
+
+    public ArrayList<Product> getProducts() {
+        ArrayList<Product> products = new ArrayList<>();
+        for (Category category : categories) {
+            products.addAll(category.getProducts());
+        }
+        return products;
+    }
 }

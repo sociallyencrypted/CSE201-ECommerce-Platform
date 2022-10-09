@@ -179,11 +179,18 @@ public class Main {
     }
 
     private static void showDeals() {
-        
+        System.out.println("Deals: ");
+        for (Deal deal : app.getDeals()) {
+            System.out.println("Deal ID: " + deal.getID());
+            System.out.println(deal);
+        }
     }
 
     private static void exploreCatalog() {
-        
+        System.out.println("Products: ");
+        for (Product product : app.getProducts()) {
+            System.out.println(product);
+        }
     }
 
     private static void adminMenu(Admin admin) {
@@ -299,9 +306,9 @@ public class Main {
             return;
         }
         System.out.println("Add a Product:-");
-        System.out.print("Product Name:");
+        System.out.print("Product Name: ");
         String name = sc.nextLine();
-        System.out.print("Product ID:");
+        System.out.print("Product ID: ");
         // of the format categoryID.productID
         String productID = sc.nextLine();
         if (app.getProduct(productID) != null) {
@@ -312,16 +319,16 @@ public class Main {
             System.out.println("Product ID does not match the format. Format: categoryID.productID");
             return;
         }
-        System.out.println("Product Details:");
+        System.out.println("Product Details: ");
         StringBuilder description= new StringBuilder();
         String descriptionLine = sc.nextLine();
-        while (!description.toString().isBlank()) {
+        while (descriptionLine.length() != 0) {
             description.append(descriptionLine).append("\n");
         }
-        System.out.print("Product Price:");
+        System.out.print("Product Price: ");
         float price = sc.nextFloat();
         sc.nextLine();
-        System.out.print("Product Quantity:");
+        System.out.print("Product Quantity: ");
         int quantity = sc.nextInt();
         sc.nextLine();
         Product product = new Product(productID, name, description.toString(), price, quantity, category);
