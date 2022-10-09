@@ -27,3 +27,8 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+.replit
+*.class
+.breakpoints
+replit.nix
