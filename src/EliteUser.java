@@ -30,6 +30,10 @@ public class EliteUser extends Customer implements Buyer{
             this.emptyCart();
             System.out.println("Your order will be delivered in 2 days.");
         }
+        int random = (int) (Math.random() * 100);
+        if (random < 10) {
+            System.out.println("We at FLIPZON have decided to reward you for your support as an ELITE member. You have won a free gold coin!");
+        }
         if (cartPrice >5000){
             receiveCoupons();
         }
