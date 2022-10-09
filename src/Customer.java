@@ -17,9 +17,6 @@ public class Customer extends User{
             quantity--;
         }
     }
-    public void removeFromCart(Product product){
-        cart.remove(product);
-    }
     public void addToCart(Deal deal, int quantity){
         while (quantity > 0){
             dealsAddedToCart.add(deal);
@@ -47,12 +44,8 @@ public class Customer extends User{
     }
 
     public void emptyCart() {
-        for (Product product : cart) {
-            this.removeFromCart(product);
-        }
-        for (Deal deal : dealsAddedToCart) {
-            this.removeFromCart(deal);
-        }
+        cart.clear();
+        dealsAddedToCart.clear();
     }
 
     public String getStatus() {

@@ -128,15 +128,11 @@ public class Application {
             }
             case "Prime" -> {
                 PrimeUser primeUser = new PrimeUser(customer.getUsername(), customer.getHashedPassword(), customer.getBalance(), customer.getCart(), customer.getDealsAddedToCart(), customer.getCoupons());
-                System.out.println("Customers array: " + customers);
-                System.out.println("Customer found at index " + customers.indexOf(customer));
                 customers.set(customers.indexOf(customer), primeUser);
                 return primeUser;
             }
             case "Elite" -> {
                 EliteUser eliteUser = new EliteUser(customer.getUsername(), customer.getHashedPassword(), customer.getBalance(), customer.getCart(), customer.getDealsAddedToCart(), customer.getCoupons());
-                System.out.println("Customers array: " + customers);
-                System.out.println("Customer found at index " + customers.indexOf(customer));
                 customers.set(customers.indexOf(customer), eliteUser);
                 return eliteUser;
             }

@@ -16,6 +16,7 @@ public class PrimeUser extends Customer implements Buyer{
         float cartPrice = calculateDiscountsOnCart();
         if (cartPrice > this.balance){
             System.out.println("Not enough balance");
+            return;
         }
         else{
             this.balance -= cartPrice;
@@ -25,6 +26,13 @@ public class PrimeUser extends Customer implements Buyer{
             System.out.println("Products ordered: ");
             for (Product product : cart) {
                 System.out.println(product);
+                product.setQuantity(product.getQuantity() - 1);
+            }
+            for (Deal deal : dealsAddedToCart) {
+                System.out.println(deal);
+                for (Product product : deal.getProducts()) {
+                    product.setQuantity(product.getQuantity() - 1);
+                }
             }
             this.emptyCart();
             System.out.println("Your order will be delivered in 3-6 days.");
@@ -38,8 +46,8 @@ public class PrimeUser extends Customer implements Buyer{
     public void receiveCoupons() {
         int numberOfCoupons = (int) (Math.random()*2 + 1);
         for (int i = 0; i < numberOfCoupons; i++) {
-            float coupon = (float) (Math.random()*10 + 5);
-            coupons.add(coupon);
+            int coupon = (int) (Math.random() * 11 + 5);
+            coupons.add((float)coupon);
             System.out.println("You have received a coupon of " + coupon + "%");
         }
     }
@@ -54,17 +62,12 @@ public class PrimeUser extends Customer implements Buyer{
             }
         }
         for (Product product : cart) {
-            if (product.getDiscountNormal() != 0) {
-                float appliedDiscount = maxOfThree(couponToBeUsed, product.getDiscountPrime(), 5);
-                cartPrice+= product.getPrice() - (product.getDiscountNormal()*product.getPrice()/100);
-                System.out.println("Discount: " + product.getDiscountNormal() + "%  on " + product.getName());
-            }
-            else {
-                cartPrice+= product.getPrice();
-            }
+            float appliedDiscount = maxOfThree(couponToBeUsed, product.getDiscountPrime(), 5);
+            cartPrice+= product.getPrice() - (appliedDiscount*product.getPrice()/100);
+            System.out.println("Discount: " + appliedDiscount + "%  on " + product.getName());
         }
         for (Deal deal : dealsAddedToCart) {
-            cartPrice+= deal.getPriceNormal();
+            cartPrice+= deal.getPricePrime();
         }
         //delivery
         float deliveryCharges = (float) (0.02*cartPrice + 100);

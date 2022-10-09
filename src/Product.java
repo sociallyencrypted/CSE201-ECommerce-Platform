@@ -37,7 +37,7 @@ public class Product {
     public String getDescription() {
         return description;
     }
-    public void setDiscount(float discountNormal, float discountPrime, float discountElite) {
+    public void setDiscount(float discountElite, float discountPrime, float discountNormal) {
         this.discountNormal = discountNormal;
         this.discountPrime = discountPrime;
         this.discountElite = discountElite;

@@ -17,6 +17,7 @@ public class EliteUser extends Customer implements Buyer{
         float cartPrice = calculateDiscountsOnCart();
         if (cartPrice > this.balance){
             System.out.println("Not enough balance");
+            return;
         }
         else{
             this.balance -= cartPrice;
@@ -26,6 +27,13 @@ public class EliteUser extends Customer implements Buyer{
             System.out.println("Products ordered: ");
             for (Product product : cart) {
                 System.out.println(product);
+                product.setQuantity(product.getQuantity() - 1);
+            }
+            for (Deal deal : dealsAddedToCart) {
+                System.out.println(deal);
+                for (Product product : deal.getProducts()) {
+                    product.setQuantity(product.getQuantity() - 1);
+                }
             }
             this.emptyCart();
             System.out.println("Your order will be delivered in 2 days.");
@@ -49,17 +57,12 @@ public class EliteUser extends Customer implements Buyer{
             }
         }
         for (Product product : cart) {
-            if (product.getDiscountNormal() != 0) {
-                float appliedDiscount = maxOfThree(couponToBeUsed, product.getDiscountPrime(), 10);
-                cartPrice+= product.getPrice() - (product.getDiscountNormal()*product.getPrice()/100);
-                System.out.println("Discount: " + product.getDiscountNormal() + "%  on " + product.getName());
-            }
-            else {
-                cartPrice+= product.getPrice();
-            }
+            float appliedDiscount = maxOfThree(couponToBeUsed, product.getDiscountElite(), 10);
+            cartPrice+= product.getPrice() - (appliedDiscount*product.getPrice()/100);
+            System.out.println("Discount: " + appliedDiscount + "%  on " + product.getName());
         }
         for (Deal deal : dealsAddedToCart) {
-            cartPrice+= deal.getPriceNormal();
+            cartPrice+= deal.getPriceElite();
         }
         //delivery
         float deliveryCharges = (float) (100);
@@ -83,8 +86,8 @@ public class EliteUser extends Customer implements Buyer{
     public void receiveCoupons() {
         int numberOfCoupons = (int) (Math.random() * 2 + 3);
         for (int i = 0; i < numberOfCoupons; i++) {
-            float coupon = (float) (Math.random()*10 + 5);
-            coupons.add(coupon);
+            int coupon = (int) (Math.random() * 11 + 5);
+            coupons.add((float)coupon);
             System.out.println("You have received a coupon of " + coupon + "%");
         }
     }

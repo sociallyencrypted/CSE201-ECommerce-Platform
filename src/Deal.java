@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Deal {
     private final Product p1;
     private final Product p2;
@@ -31,5 +33,12 @@ public class Deal {
     }
     public float getPriceElite() {
         return combinedPriceElite;
+    }
+
+    public ArrayList<Product> getProducts() {
+        ArrayList<Product> products = new ArrayList<>();
+        products.add(p1);
+        products.add(p2);
+        return products;
     }
 }

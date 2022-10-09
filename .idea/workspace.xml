@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7821ca63-8629-4596-ad39-02a19955af58" name="Changes" comment="some runtime errors fixed">
+    <list default="true" id="7821ca63-8629-4596-ad39-02a19955af58" name="Changes" comment="nvm now they're fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Deal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EliteUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EliteUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NormalUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NormalUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrimeUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrimeUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1665324230168</updated>
       <workItem from="1665324245114" duration="658000" />
-      <workItem from="1665324969447" duration="17990000" />
+      <workItem from="1665324969447" duration="19825000" />
     </task>
     <task id="LOCAL-00001" summary="some stuff recreated :tear emoji:">
       <created>1665333798719</created>
@@ -157,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665349480871</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="nvm now they're fixed">
+      <created>1665349547663</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1665349547663</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +204,8 @@
     <MESSAGE value="fixed admin credentials" />
     <MESSAGE value="fixed morphing" />
     <MESSAGE value="some runtime errors fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="some runtime errors fixed" />
+    <MESSAGE value="nvm now they're fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="nvm now they're fixed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

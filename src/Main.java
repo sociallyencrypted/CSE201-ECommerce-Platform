@@ -178,6 +178,12 @@ public class Main {
                     String status = sc.nextLine();
                     customer = app.morphCustomer(customer, status);
                 }
+                case 11 -> {
+                    System.out.println("Enter amount to add");
+                    float amount = sc.nextFloat();
+                    sc.nextLine();
+                    customer.setBalance(customer.getBalance()+amount);
+                }
                 case 12 -> {
                     System.out.println("Bye " + customer.getUsername() + "!!");
                     return;
