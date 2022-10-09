@@ -158,7 +158,20 @@ public class Main {
                     }
                 }
                 case 8 -> customer.emptyCart();
-                case 9 -> {// add code
+                case 9 -> {
+                    if (customer.getCart().size() == 0 && customer.getDealsAddedToCart().size() == 0){
+                        System.out.println("Cart is empty");
+                    } else {
+                        if (customer instanceof NormalUser){
+                            ((NormalUser) customer).checkout();
+                        }
+                        if (customer instanceof PrimeUser){
+                            ((PrimeUser) customer).checkout();
+                        }
+                        if (customer instanceof EliteUser){
+                            ((EliteUser) customer).checkout();
+                        }
+                    }
                 }
                 case 10 -> {
                     System.out.println("Current status: " + customer.getStatus());

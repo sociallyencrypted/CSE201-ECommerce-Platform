@@ -90,13 +90,6 @@ public class Application {
     }
 
     public void morphCustomer(Customer customer, String status) {
-        // prices for change:
-        // normal -> prime = 200
-        // prime -> normal = 0
-        // prime -> elite = 100
-        // elite -> prime = 0
-        // elite -> normal = 0
-        // normal -> elite = 300
         String currentStatus = customer.getStatus();
         if (currentStatus.equals(status)) {
             return;
