@@ -11,4 +11,14 @@ public class EliteUser extends Customer implements Buyer{
         this.dealsAddedToCart = dealsAddedToCart;
         this.coupons = coupons;
     }
+
+    @Override
+    public void checkout() {
+
+    }
+
+    @Override
+    public void calculateDiscountsOnCart() {
+
+    }
 }
