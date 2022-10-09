@@ -120,7 +120,12 @@ public class Main {
                     sc.nextLine();
                     Product product = app.getProduct(productID);
                     if (product != null){
-                        customer.addToCart(product, quantity);
+                        if (product.getQuantity() >= quantity){
+                            customer.addToCart(product, quantity);
+                            System.out.println("Product added to cart");
+                        } else {
+                            System.out.println("Not enough quantity; Only " + product.getQuantity() + " left");
+                        }
                     } else {
                         System.out.println("Invalid Product ID");
                     }

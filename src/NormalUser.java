@@ -14,11 +14,48 @@ public class NormalUser extends Customer implements Buyer{
     }
     @Override
     public void checkout() {
-
+        float cartPrice = calculateDiscountsOnCart();
+        if (cartPrice > this.balance){
+            System.out.println("Not enough balance");
+        }
+        else{
+            this.balance -= cartPrice;
+            System.out.println("Your order is placed successfully. Details:");
+            System.out.println("Total price: " + cartPrice);
+            System.out.println("Remaining balance: " + this.balance);
+            System.out.println("Products ordered: ");
+            for (Product product : cart) {
+                System.out.println(product);
+            }
+            this.emptyCart();
+            System.out.println("Your order will be delivered in 7-10 days.");
+        }
     }
 
     @Override
-    public void calculateDiscountsOnCart() {
-
+    public float calculateDiscountsOnCart() {
+        float cartPrice = 0;
+        for (Product product : cart) {
+           if (product.getDiscountNormal() != 0) {
+               cartPrice+= product.getPrice() - (product.getDiscountNormal()*product.getPrice()/100);
+               System.out.println("Discount: " + product.getDiscountNormal() + "%  on " + product.getName());
+           }
+              else {
+                cartPrice+= product.getPrice();
+              }
+        }
+        for (Deal deal : dealsAddedToCart) {
+            cartPrice+= deal.getPriceNormal();
+        }
+        //delivery
+        float deliveryCharges = (float) (0.05*cartPrice + 100);
+        System.out.println("Delivery charges: " + deliveryCharges);
+        cartPrice+= deliveryCharges;
+        System.out.println("Total price: " + cartPrice);
+        return cartPrice;
+    }
+    @Override
+    public void receiveCoupons(){
+        return;
     }
 }

@@ -22,4 +22,14 @@ public class Deal {
     public String toString() {
         return p1.getName() + " + " + p2.getName() + " for " + combinedPriceNormal + " (Normal), " + combinedPricePrime + " (Prime), " + combinedPriceElite + " (Elite)";
     }
+
+    public float getPriceNormal() {
+        return combinedPriceNormal;
+    }
+    public float getPricePrime() {
+        return combinedPricePrime;
+    }
+    public float getPriceElite() {
+        return combinedPriceElite;
+    }
 }

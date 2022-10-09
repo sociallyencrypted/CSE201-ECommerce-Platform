@@ -1,4 +1,5 @@
 public interface Buyer {
     public void checkout();
-    public void calculateDiscountsOnCart();
+    public float calculateDiscountsOnCart();
+    public void receiveCoupons();
 }
