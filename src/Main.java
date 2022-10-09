@@ -190,6 +190,7 @@ public class Main {
         System.out.println("Products: ");
         for (Product product : app.getProducts()) {
             System.out.println("Product ID: " + product.getID());
+            System.out.println("Category: " + product.getCategory());
             System.out.println(product);
             System.out.println("------------------------");
         }
@@ -334,7 +335,7 @@ public class Main {
         System.out.print("Product Quantity: ");
         int quantity = sc.nextInt();
         sc.nextLine();
-        Product product = new Product(productID, name, description.toString(), price, quantity, category);
+        Product product = new Product(productID, name, description, price, quantity, category);
         category.addProduct(product);
     }
 }

@@ -2,22 +2,25 @@ import java.util.ArrayList;
 
 public class Category {
     private final String name;
-    private ArrayList<Product> products;
+    private final ArrayList<Product> products = new ArrayList<>();
     private final int ID;
     public Category(int ID, String name) {
         this.ID = ID;
         this.name = name;
-        products = new ArrayList<>();
     }
     public int getID() {
         return this.ID;
     }
 
     public ArrayList<Product> getProducts() {
-        return products;
+        return this.products;
     }
 
     public void addProduct(Product product) {
-        products.add(product);
+        this.products.add(product);
+    }
+
+    public String toString() {
+        return this.name;
     }
 }
