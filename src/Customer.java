@@ -12,12 +12,22 @@ public class Customer extends User{
         coupons = new ArrayList<>();
     }
     public void addToCart(Product product, int quantity){
+        if (product.getQuantity() < quantity){
+            System.out.println("Not enough quantity");
+            return;
+        }
         while (quantity > 0){
             cart.add(product);
             quantity--;
         }
     }
     public void addToCart(Deal deal, int quantity){
+        for (Product product : deal.getProducts()) {
+            if (product.getQuantity() < quantity){
+                System.out.println("Not enough quantity");
+                return;
+            }
+        }
         while (quantity > 0){
             dealsAddedToCart.add(deal);
             quantity--;
