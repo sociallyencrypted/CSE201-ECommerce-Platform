@@ -2,11 +2,14 @@ import java.util.ArrayList;
 
 public class Customer extends User{
     protected float balance;
-    protected final ArrayList<Product> cart = new ArrayList<>();
-    protected final ArrayList<Deal> dealsAddedToCart = new ArrayList<>();
-    protected final ArrayList<Float> coupons = new ArrayList<>();
+    protected ArrayList<Product> cart;
+    protected ArrayList<Deal> dealsAddedToCart;
+    protected ArrayList<Float> coupons;
     public Customer(String username, String password) {
         super(username, password);
+        cart = new ArrayList<>();
+        dealsAddedToCart = new ArrayList<>();
+        coupons = new ArrayList<>();
     }
     public void addToCart(Product product, int quantity){
         while (quantity > 0){
@@ -31,9 +34,6 @@ public class Customer extends User{
     }
     public float getBalance(){
         return balance;
-    }
-    public void addCoupon(float coupon){
-        coupons.add(coupon);
     }
     public ArrayList<Product> getCart(){
         return cart;
