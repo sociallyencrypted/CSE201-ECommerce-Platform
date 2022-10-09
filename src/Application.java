@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class Application {
-    private ArrayList<Admin> admins;
-    private ArrayList<Customer> customers;
-    private ArrayList<Category> categories;
-    private ArrayList<Deal> deals;
+    private final ArrayList<Admin> admins = new ArrayList<>();
+    private final ArrayList<Customer> customers = new ArrayList<>();
+    private final ArrayList<Category> categories = new ArrayList<>();
+    private final ArrayList<Deal> deals = new ArrayList<>();
     public void register(String username, String password, boolean isAdmin) {
         if (isAdmin) {
             admins.add(new Admin(username, password));
@@ -61,5 +61,22 @@ public class Application {
             }
         }
         return null;
+    }
+
+    public void deleteProduct(Product product) {
+        for (Category category : categories) {
+            if (category.getProducts().contains(product)) {
+                category.getProducts().remove(product);
+                return;
+            }
+        }
+    }
+
+    public void addDeal(Deal deal) {
+        deals.add(deal);
+    }
+
+    public ArrayList<Deal> getDeals() {
+        return deals;
     }
 }
