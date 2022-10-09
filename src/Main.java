@@ -8,8 +8,7 @@ public class Main {
     private static final Scanner sc = new Scanner(System.in);
 
     static {
-        app.register("Beff Jezos", MD5.getMd5("2021066"), true);
-        app.register("Gill Bates", MD5.getMd5("2021066"), false);
+        app.register("Mehul Arora", MD5.getMd5("2021066"), true);
     }
 
     public static class MD5 {
