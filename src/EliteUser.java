@@ -50,14 +50,17 @@ public class EliteUser extends Customer implements Buyer{
     @Override
     public float calculateDiscountsOnCart() {
         float cartPrice = 0;
-        float couponToBeUsed = 0;
-        for (float coupon : coupons) {
-            if (coupon > couponToBeUsed){
-                couponToBeUsed = coupon;
-            }
-        }
         for (Product product : cart) {
+            float couponToBeUsed = 0;
+            for (float coupon : coupons) {
+                if (coupon > couponToBeUsed){
+                    couponToBeUsed = coupon;
+                }
+            }
             float appliedDiscount = maxOfThree(couponToBeUsed, product.getDiscountElite(), 10);
+            if ((appliedDiscount == couponToBeUsed) && (appliedDiscount != 0) && (appliedDiscount != 10) && (appliedDiscount != product.getDiscountElite())){
+                coupons.remove(couponToBeUsed);
+            }
             cartPrice+= product.getPrice() - (appliedDiscount*product.getPrice()/100);
             System.out.println("Discount: " + appliedDiscount + "%  on " + product.getName());
         }

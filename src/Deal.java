@@ -18,7 +18,7 @@ public class Deal {
     }
 
     public String getID() {
-        return p1.getID() + "_" + p2.getID();
+        return p1.getCategory().getID() + "." + p1.getID() + "_" + p2.getCategory().getID() + "." + p2.getID();
     }
 
     public String toString() {
