@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7821ca63-8629-4596-ad39-02a19955af58" name="Changes" comment="some stuff recreated :tear emoji:">
+    <list default="true" id="7821ca63-8629-4596-ad39-02a19955af58" name="Changes" comment="more menus done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Deal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EliteUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EliteUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NormalUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NormalUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrimeUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrimeUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1665324230168</updated>
       <workItem from="1665324245114" duration="658000" />
-      <workItem from="1665324969447" duration="6205000" />
+      <workItem from="1665324969447" duration="7765000" />
     </task>
     <task id="LOCAL-00001" summary="some stuff recreated :tear emoji:">
       <created>1665333798719</created>
@@ -60,7 +66,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665333798719</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="more menus done">
+      <created>1665334957386</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665334957386</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -79,7 +92,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="some stuff recreated :tear emoji:" />
-    <option name="LAST_COMMIT_MESSAGE" value="some stuff recreated :tear emoji:" />
+    <MESSAGE value="more menus done" />
+    <option name="LAST_COMMIT_MESSAGE" value="more menus done" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

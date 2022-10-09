@@ -57,4 +57,7 @@ public class Product {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+    public String toString() {
+        return "Product: " + this.getName() + " (" + this.getID() + ") " + "Price: " + this.getPrice() + " Quantity: " + this.getQuantity() + "\n" + this.getDescription();
+    }
 }

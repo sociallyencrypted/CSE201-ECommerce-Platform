@@ -79,4 +79,67 @@ public class Application {
     public ArrayList<Deal> getDeals() {
         return deals;
     }
+
+    public Deal getDeal(String dealID) {
+        for (Deal deal : deals) {
+            if (deal.getID().equals(dealID)) {
+                return deal;
+            }
+        }
+        return null;
+    }
+
+    public void morphCustomer(Customer customer, String status) {
+        // prices for change:
+        // normal -> prime = 200
+        // prime -> normal = 0
+        // prime -> elite = 100
+        // elite -> prime = 0
+        // elite -> normal = 0
+        // normal -> elite = 300
+        String currentStatus = customer.getStatus();
+        if (currentStatus.equals(status)) {
+            return;
+        }
+        switch (currentStatus) {
+            case "Normal":
+                if (status.equals("Prime")) {
+                    if (customer.getBalance() < 200) {
+                        System.out.println("Not enough balance");
+                        return;
+                    }
+                    customer.setBalance(customer.getBalance() - 200);
+                } else if (status.equals("Elite")) {
+                    if (customer.getBalance() < 300) {
+                        System.out.println("Not enough balance");
+                        return;
+                    }
+                    customer.setBalance(customer.getBalance() - 300);
+                }
+                break;
+            case "Prime":
+                if (status.equals("Elite")) {
+                    if (customer.getBalance() < 100) {
+                        System.out.println("Not enough balance");
+                        return;
+                    }
+                    customer.setBalance(customer.getBalance() - 100);
+                }
+                break;
+        }
+        switch (status) {
+            case "Normal" -> {
+                NormalUser normalUser = new NormalUser(customer.getUsername(), customer.getHashedPassword(), customer.getBalance(), customer.getCart(), customer.getDealsAddedToCart(), customer.getCoupons());
+                customers.set(customers.indexOf(customer), normalUser);
+            }
+            case "Prime" -> {
+                PrimeUser primeUser = new PrimeUser(customer.getUsername(), customer.getHashedPassword(), customer.getBalance(), customer.getCart(), customer.getDealsAddedToCart(), customer.getCoupons());
+                customers.set(customers.indexOf(customer), primeUser);
+            }
+            case "Elite" -> {
+                EliteUser eliteUser = new EliteUser(customer.getUsername(), customer.getHashedPassword(), customer.getBalance(), customer.getCart(), customer.getDealsAddedToCart(), customer.getCoupons());
+                customers.set(customers.indexOf(customer), eliteUser);
+            }
+        }
+    }
 }

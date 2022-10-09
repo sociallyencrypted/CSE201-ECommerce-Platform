@@ -80,10 +80,102 @@ public class Main {
     }
 
     private static void userLogin() {
+        System.out.println("Enter name");
+        String name = sc.nextLine();
+        System.out.println("Enter password");
+        String password = sc.nextLine();
+        Customer customer = (Customer) app.login(name, MD5.getMd5(password), false);
+        if (customer != null){
+            appCustomerMenu(customer);
+        } else {
+            System.out.println("Invalid Credentials");
+        }
+    }
+
+    private static void appCustomerMenu(Customer customer) {
+        System.out.println("Welcome " + customer.getUsername() + "!!");
+        while (true){
+            System.out.println("""
+                    1) browse products
+                    2) browse deals
+                    3) add a product to cart
+                    4) add products in deal to cart
+                    5) view coupons
+                    6) check account balance
+                    7) view cart
+                    8) empty cart
+                    9) checkout cart
+                    10) upgrade customer status
+                    11) Add amount to wallet
+                    12) back""");
+            int choice = sc.nextInt();
+            sc.nextLine();
+            switch (choice){
+                case 1 -> exploreCatalog();
+                case 2 -> showDeals();
+                case 3 -> {
+                    System.out.println("Enter product ID and quantity");
+                    String productID = sc.next();
+                    int quantity = sc.nextInt();
+                    sc.nextLine();
+                    Product product = app.getProduct(productID);
+                    if (product != null){
+                        customer.addToCart(product, quantity);
+                    } else {
+                        System.out.println("Invalid Product ID");
+                    }
+                }
+                case 4 -> {
+                    System.out.println("Enter deal ID");
+                    String dealID = sc.next();
+                    sc.nextLine();
+                    Deal deal = app.getDeal(dealID);
+                    if (deal != null){
+                        customer.addToCart(deal, 1);
+                    } else {
+                        System.out.println("Invalid Deal ID");
+                    }
+                }
+                case 5 -> {
+                    System.out.println("Coupons: ");
+                    for (Float coupon : customer.getCoupons()) {
+                        System.out.println(coupon);
+                    }
+                }
+                case 6 -> System.out.println("Account Balance: " + customer.getBalance());
+                case 7 -> {
+                    System.out.println("Cart: ");
+                    for (Product cartItem : customer.getCart()) {
+                        System.out.println(cartItem);
+                    }
+                    for (Deal cartItem : customer.getDealsAddedToCart()) {
+                        System.out.println(cartItem);
+                    }
+                }
+                case 8 -> customer.emptyCart();
+                case 9 -> {// add code
+                }
+                case 10 -> {
+                    System.out.println("Current status: " + customer.getStatus());
+                    System.out.print("Choose new status: ");
+                    String status = sc.nextLine();
+                    app.morphCustomer(customer, status);
+                }
+                case 12 -> {
+                    System.out.println("Bye " + customer.getUsername() + "!!");
+                    return;
+                }
+            }
+        }
     }
 
     private static void userSignUp() {
-
+        System.out.println("Enter name");
+        String name = sc.nextLine();
+        System.out.println("Enter password");
+        String password = sc.nextLine();
+        app.register(name, password, false);
+        System.out.println("customer successfully registered!!");
     }
 
     private static void showDeals() {

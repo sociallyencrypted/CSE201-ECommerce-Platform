@@ -14,4 +14,8 @@ public class Deal {
         this.combinedPricePrime = combinedPricePrime;
         this.combinedPriceElite = combinedPriceElite;
     }
+
+    public String getID() {
+        return p1.getID() + "_" + p2.getID();
+    }
 }
