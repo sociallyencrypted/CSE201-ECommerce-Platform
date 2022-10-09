@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Customer extends User{
     protected float balance;
-    protected ArrayList<Product> cart;
-    protected ArrayList<Deal> dealsAddedToCart;
-    protected ArrayList<Float> coupons;
+    protected final ArrayList<Product> cart = new ArrayList<>();
+    protected final ArrayList<Deal> dealsAddedToCart = new ArrayList<>();
+    protected final ArrayList<Float> coupons = new ArrayList<>();
     public Customer(String username, String password) {
         super(username, password);
     }

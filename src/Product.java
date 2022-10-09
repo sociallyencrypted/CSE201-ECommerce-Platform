@@ -58,6 +58,6 @@ public class Product {
         this.quantity = quantity;
     }
     public String toString() {
-        return "Product: " + this.getName() + " (" + this.getID() + ") " + "Price: " + this.getPrice() + " Quantity: " + this.getQuantity() + "\n" + this.getDescription();
+        return "Product: " + this.getName() + "\n"+ this.getDescription();
     }
 }

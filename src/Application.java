@@ -123,8 +123,6 @@ public class Application {
         switch (status) {
             case "Normal" -> {
                 NormalUser normalUser = new NormalUser(customer.getUsername(), customer.getHashedPassword(), customer.getBalance(), customer.getCart(), customer.getDealsAddedToCart(), customer.getCoupons());
-                System.out.println("Customers array: " + customers);
-                System.out.println("Customer found at index " + customers.indexOf(customer));
                 customers.set(customers.indexOf(customer), normalUser);
                 return normalUser;
             }
