@@ -192,7 +192,7 @@ public class Main {
         String name = sc.nextLine();
         System.out.println("Enter password");
         String password = sc.nextLine();
-        app.register(name, password, false);
+        app.register(name, MD5.getMd5(password), false);
         System.out.println("customer successfully registered!!");
     }
 
@@ -207,9 +207,12 @@ public class Main {
     private static void exploreCatalog() {
         System.out.println("Products: ");
         for (Product product : app.getProducts()) {
-            System.out.println("Product ID: " + product.getID());
+            System.out.println("------------------------");
+            System.out.println("Product ID: " + product.getCategory().getID() + "." + product.getID());
             System.out.println("Category: " + product.getCategory());
             System.out.println(product);
+            System.out.println("Price: " + product.getPrice());
+            System.out.println("Quantity: " + product.getQuantity());
             System.out.println("------------------------");
         }
     }
