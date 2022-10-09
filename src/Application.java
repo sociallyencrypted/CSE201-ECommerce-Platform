@@ -89,23 +89,23 @@ public class Application {
         return null;
     }
 
-    public void morphCustomer(Customer customer, String status) {
+    public Customer morphCustomer(Customer customer, String status) {
         String currentStatus = customer.getStatus();
         if (currentStatus.equals(status)) {
-            return;
+            return customer;
         }
         switch (currentStatus) {
             case "Normal":
                 if (status.equals("Prime")) {
                     if (customer.getBalance() < 200) {
                         System.out.println("Not enough balance");
-                        return;
+                        return customer;
                     }
                     customer.setBalance(customer.getBalance() - 200);
                 } else if (status.equals("Elite")) {
                     if (customer.getBalance() < 300) {
                         System.out.println("Not enough balance");
-                        return;
+                        return customer;
                     }
                     customer.setBalance(customer.getBalance() - 300);
                 }
@@ -114,7 +114,7 @@ public class Application {
                 if (status.equals("Elite")) {
                     if (customer.getBalance() < 100) {
                         System.out.println("Not enough balance");
-                        return;
+                        return customer;
                     }
                     customer.setBalance(customer.getBalance() - 100);
                 }
@@ -123,17 +123,27 @@ public class Application {
         switch (status) {
             case "Normal" -> {
                 NormalUser normalUser = new NormalUser(customer.getUsername(), customer.getHashedPassword(), customer.getBalance(), customer.getCart(), customer.getDealsAddedToCart(), customer.getCoupons());
+                System.out.println("Customers array: " + customers);
+                System.out.println("Customer found at index " + customers.indexOf(customer));
                 customers.set(customers.indexOf(customer), normalUser);
+                return normalUser;
             }
             case "Prime" -> {
                 PrimeUser primeUser = new PrimeUser(customer.getUsername(), customer.getHashedPassword(), customer.getBalance(), customer.getCart(), customer.getDealsAddedToCart(), customer.getCoupons());
+                System.out.println("Customers array: " + customers);
+                System.out.println("Customer found at index " + customers.indexOf(customer));
                 customers.set(customers.indexOf(customer), primeUser);
+                return primeUser;
             }
             case "Elite" -> {
                 EliteUser eliteUser = new EliteUser(customer.getUsername(), customer.getHashedPassword(), customer.getBalance(), customer.getCart(), customer.getDealsAddedToCart(), customer.getCoupons());
+                System.out.println("Customers array: " + customers);
+                System.out.println("Customer found at index " + customers.indexOf(customer));
                 customers.set(customers.indexOf(customer), eliteUser);
+                return eliteUser;
             }
         }
+        return customer;
     }
 
     public ArrayList<Product> getProducts() {

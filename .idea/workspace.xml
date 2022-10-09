@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7821ca63-8629-4596-ad39-02a19955af58" name="Changes" comment="added gift!">
+    <list default="true" id="7821ca63-8629-4596-ad39-02a19955af58" name="Changes" comment="fixed admin credentials">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +51,7 @@
       <option name="presentableId" value="Default" />
       <updated>1665324230168</updated>
       <workItem from="1665324245114" duration="658000" />
-      <workItem from="1665324969447" duration="15082000" />
+      <workItem from="1665324969447" duration="17169000" />
     </task>
     <task id="LOCAL-00001" summary="some stuff recreated :tear emoji:">
       <created>1665333798719</created>
@@ -136,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665346015638</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixed admin credentials">
+      <created>1665346113869</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1665346113869</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +174,8 @@
     <MESSAGE value="implemented cart menu" />
     <MESSAGE value="fixed MD5 for customers and product display" />
     <MESSAGE value="added gift!" />
-    <option name="LAST_COMMIT_MESSAGE" value="added gift!" />
+    <MESSAGE value="fixed admin credentials" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed admin credentials" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

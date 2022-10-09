@@ -176,7 +176,7 @@ public class Main {
                     System.out.println("Current status: " + customer.getStatus());
                     System.out.print("Choose new status: ");
                     String status = sc.nextLine();
-                    app.morphCustomer(customer, status);
+                    customer = app.morphCustomer(customer, status);
                 }
                 case 12 -> {
                     System.out.println("Bye " + customer.getUsername() + "!!");
